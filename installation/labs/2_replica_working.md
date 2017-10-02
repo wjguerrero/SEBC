@@ -616,3 +616,156 @@ Created symlink from /etc/systemd/system/multi-user.target.wants/mariadb.service
 [root@ip-172-31-6-242 mdb_backup]# sudo systemctl enable mariadb
 [root@ip-172-31-6-242 mdb_backup]# systemctl list-unit-files | grep mariadb
 mariadb.service                               enabled
+
+[root@ip-172-31-6-242 mdb_backup]# service mariadb start
+Redirecting to /bin/systemctl start  mariadb.service
+[root@ip-172-31-6-242 mdb_backup]# /usr/bin/mysql_secure_installation
+
+NOTE: RUNNING ALL PARTS OF THIS SCRIPT IS RECOMMENDED FOR ALL MariaDB
+      SERVERS IN PRODUCTION USE!  PLEASE READ EACH STEP CAREFULLY!
+
+In order to log into MariaDB to secure it, we'll need the current
+password for the root user.  If you've just installed MariaDB, and
+you haven't set the root password yet, the password will be blank,
+so you should just press enter here.
+
+Enter current password for root (enter for none):
+OK, successfully used password, moving on...
+
+Setting the root password ensures that nobody can log into the MariaDB
+root user without the proper authorisation.
+
+Set root password? [Y/n] y
+New password:
+Re-enter new password:
+Password updated successfully!
+Reloading privilege tables..
+ ... Success!
+
+
+By default, a MariaDB installation has an anonymous user, allowing anyone
+to log into MariaDB without having to have a user account created for
+them.  This is intended only for testing, and to make the installation
+go a bit smoother.  You should remove them before moving into a
+production environment.
+
+Remove anonymous users? [Y/n] y
+ ... Success!
+
+Normally, root should only be allowed to connect from 'localhost'.  This
+ensures that someone cannot guess at the root password from the network.
+
+Disallow root login remotely? [Y/n] n
+ ... skipping.
+
+By default, MariaDB comes with a database named 'test' that anyone can
+access.  This is also intended only for testing, and should be removed
+before moving into a production environment.
+
+Remove test database and access to it? [Y/n] y
+ - Dropping test database...
+ ... Success!
+ - Removing privileges on test database...
+ ... Success!
+
+Reloading the privilege tables will ensure that all changes made so far
+will take effect immediately.
+
+Reload privilege tables now? [Y/n] y
+ ... Success!
+
+Cleaning up...
+
+All done!  If you've completed all of the above steps, your MariaDB
+installation should now be secure.
+
+Thanks for using MariaDB!
+[root@ip-172-31-6-242 mdb_backup]# mysql -u root -p
+Enter password:
+Welcome to the MariaDB monitor.  Commands end with ; or \g.
+Your MariaDB connection id is 9
+Server version: 5.5.56-MariaDB MariaDB Server
+
+Copyright (c) 2000, 2017, Oracle, MariaDB Corporation Ab and others.
+
+Type 'help;' or '\h' for help. Type '\c' to clear the current input statement.
+
+MariaDB [(none)]> create database amon DEFAULT CHARACTER SET utf8;
+grant all on rman.* TO 'rman'@'%' IDENTIFIED BY 'rman_password';
+create database metastore DEFAULT CHARACTER SET utf8;
+grant all on metastore.* TO 'hive'@'%' IDENTIFIED BY 'hive_password';
+create database sentry DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all on amon.* TO 'amon'@'%' IDENTIFIED BY 'amon_password';
+grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY 'sentry_password';
+create database nav DEFAULT CHARACTER SET utf8;
+grant all on nav.* TO 'nav'@'%' IDENTIFIED BY 'nav_password';
+create database navms DEFAULT CHARACTER SET utf8;
+grant all on navms.* TO 'navms'@'%' IDENTIFIED BY 'naQuery OK, 0 rows affected (0.00 sec)
+vms_passw
+ord';
+
+MariaDB [(none)]> create database rman DEFAULT CHARACTER SET utf8;
+create database scm DEFAULT CHARACTER SET utf8;
+grant all on scm.* TO 'scm'@'%' IDENTIFIED BY 'scm_password';
+
+create database hue;
+grant all on hue.* to 'hue'@'%' identified by 'secretpasswoQuery OK, 1 row affected (0.00 sec)r
+d';
+
+
+MariaDB [(none)]> grant all on rman.* TO 'rman'@'%' IDENTIFIED BY 'rman_password';
+create database oozie;
+grant all privileges on oozie.* to 'oozie'@'localhost' identified by 'oozie';
+grant all privileges on oozie.* to 'oozie'@'%' identified by 'oozie';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> create database metastore DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all on metastore.* TO 'hive'@'%' IDENTIFIED BY 'hive_password';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> create database sentry DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all on sentry.* TO 'sentry'@'%' IDENTIFIED BY 'sentry_password';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> create database nav DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all on nav.* TO 'nav'@'%' IDENTIFIED BY 'nav_password';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> create database navms DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all on navms.* TO 'navms'@'%' IDENTIFIED BY 'navms_password';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]>
+MariaDB [(none)]> create database scm DEFAULT CHARACTER SET utf8;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all on scm.* TO 'scm'@'%' IDENTIFIED BY 'scm_password';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]>
+MariaDB [(none)]> create database hue;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all on hue.* to 'hue'@'%' identified by 'secretpassword';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]>
+MariaDB [(none)]> create database oozie;
+Query OK, 1 row affected (0.00 sec)
+
+MariaDB [(none)]> grant all privileges on oozie.* to 'oozie'@'localhost' identified by 'oozie';
+Query OK, 0 rows affected (0.00 sec)
+
+MariaDB [(none)]> grant all privileges on oozie.* to 'oozie'@'%' identified by 'oozie';
+Query OK, 0 rows affected (0.00 sec)
+
