@@ -93,4 +93,53 @@ INFO  : Starting task [Stage-0:DDL] in serial mode
 INFO  : Completed executing command(queryId=hive_20171004202626_82587670-a5f5-4519-877b-dbb16de0dc18); Time taken: 0.022 seconds
 INFO  : OK
 No rows affected (0.156 seconds)
-0: jdbc:hive2://localhost:10000/default>
+0: jdbc:hive2://localhost:10000/default> GRANT SELECT ON DATABASE default TO ROLE reads;
+INFO  : Compiling command(queryId=hive_20171004202727_abdbdfec-7db2-452f-8a9b-2d460c4c31dc): GRANT SELECT ON DATABASE default TO ROLE reads
+INFO  : Semantic Analysis Completed
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : Completed compiling command(queryId=hive_20171004202727_abdbdfec-7db2-452f-8a9b-2d460c4c31dc); Time taken: 0.065 seconds
+INFO  : Executing command(queryId=hive_20171004202727_abdbdfec-7db2-452f-8a9b-2d460c4c31dc): GRANT SELECT ON DATABASE default TO ROLE reads
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20171004202727_abdbdfec-7db2-452f-8a9b-2d460c4c31dc); Time taken: 0.028 seconds
+INFO  : OK
+No rows affected (0.105 seconds)
+0: jdbc:hive2://localhost:10000/default> GRANT ROLE reads TO GROUP selector;
+INFO  : Compiling command(queryId=hive_20171004202727_adf11e2d-8dd2-4b36-b38d-821db002fa7c): GRANT ROLE reads TO GROUP selector
+INFO  : Semantic Analysis Completed
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : Completed compiling command(queryId=hive_20171004202727_adf11e2d-8dd2-4b36-b38d-821db002fa7c); Time taken: 0.051 seconds
+INFO  : Executing command(queryId=hive_20171004202727_adf11e2d-8dd2-4b36-b38d-821db002fa7c): GRANT ROLE reads TO GROUP selector
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20171004202727_adf11e2d-8dd2-4b36-b38d-821db002fa7c); Time taken: 0.025 seconds
+INFO  : OK
+No rows affected (0.1 seconds)
+0: jdbc:hive2://localhost:10000/default> REVOKE ALL ON DATABASE default FROM ROLE writes;
+INFO  : Compiling command(queryId=hive_20171004202727_8fcad5a0-6482-47da-976d-475826edbfed): REVOKE ALL ON DATABASE default FROM ROLE writes
+INFO  : Semantic Analysis Completed
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : Completed compiling command(queryId=hive_20171004202727_8fcad5a0-6482-47da-976d-475826edbfed); Time taken: 0.059 seconds
+INFO  : Executing command(queryId=hive_20171004202727_8fcad5a0-6482-47da-976d-475826edbfed): REVOKE ALL ON DATABASE default FROM ROLE writes
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20171004202727_8fcad5a0-6482-47da-976d-475826edbfed); Time taken: 0.075 seconds
+INFO  : OK
+No rows affected (0.146 seconds)
+0: jdbc:hive2://localhost:10000/default> GRANT SELECT ON default.sample_07 TO ROLE writes;
+INFO  : Compiling command(queryId=hive_20171004202828_718d0639-03c7-4dd9-9517-2e6ea26d1b79): GRANT SELECT ON default.sample_07 TO ROLE writes
+INFO  : Semantic Analysis Completed
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : Completed compiling command(queryId=hive_20171004202828_718d0639-03c7-4dd9-9517-2e6ea26d1b79); Time taken: 0.059 seconds
+INFO  : Executing command(queryId=hive_20171004202828_718d0639-03c7-4dd9-9517-2e6ea26d1b79): GRANT SELECT ON default.sample_07 TO ROLE writes
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20171004202828_718d0639-03c7-4dd9-9517-2e6ea26d1b79); Time taken: 0.029 seconds
+INFO  : OK
+No rows affected (0.1 seconds)
+0: jdbc:hive2://localhost:10000/default> GRANT ROLE writes TO GROUP inserters;
+INFO  : Compiling command(queryId=hive_20171004202929_acdb4488-4d79-43cc-8445-a8163d7de46f): GRANT ROLE writes TO GROUP inserters
+INFO  : Semantic Analysis Completed
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : Completed compiling command(queryId=hive_20171004202929_acdb4488-4d79-43cc-8445-a8163d7de46f); Time taken: 0.056 seconds
+INFO  : Executing command(queryId=hive_20171004202929_acdb4488-4d79-43cc-8445-a8163d7de46f): GRANT ROLE writes TO GROUP inserters
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20171004202929_acdb4488-4d79-43cc-8445-a8163d7de46f); Time taken: 0.027 seconds
+INFO  : OK
+No rows affected (0.095 seconds)
