@@ -143,3 +143,59 @@ INFO  : Starting task [Stage-0:DDL] in serial mode
 INFO  : Completed executing command(queryId=hive_20171004202929_acdb4488-4d79-43cc-8445-a8163d7de46f); Time taken: 0.027 seconds
 INFO  : OK
 No rows affected (0.095 seconds)
+[george@ip-172-31-5-64 centos]$ kinit
+Password for george@WGSEBC.COM:
+[george@ip-172-31-5-64 centos]$ beeline
+Beeline version 1.1.0-cdh5.9.3 by Apache Hive
+beeline> !connect jdbc:hive2://localhost:10000/default;principal=hive/ip-172-31-5-64.us-east-2.compute.internal@WGSEBC.COM
+scan complete in 2ms
+Connecting to jdbc:hive2://localhost:10000/default;principal=hive/ip-172-31-5-64.us-east-2.compute.internal@WGSEBC.COM
+Connected to: Apache Hive (version 1.1.0-cdh5.9.3)
+Driver: Hive JDBC (version 1.1.0-cdh5.9.3)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+0: jdbc:hive2://localhost:10000/default> SHOW TABLES;
+INFO  : Compiling command(queryId=hive_20171004203232_5d7ae43e-84cc-4dbb-8340-ffce576108a0): SHOW TABLES
+INFO  : Semantic Analysis Completed
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:tab_name, type:string, comment:from deserializer)], properties:null)
+INFO  : Completed compiling command(queryId=hive_20171004203232_5d7ae43e-84cc-4dbb-8340-ffce576108a0); Time taken: 0.065 seconds
+INFO  : Executing command(queryId=hive_20171004203232_5d7ae43e-84cc-4dbb-8340-ffce576108a0): SHOW TABLES
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20171004203232_5d7ae43e-84cc-4dbb-8340-ffce576108a0); Time taken: 0.125 seconds
+INFO  : OK
++------------+--+
+|  tab_name  |
++------------+--+
+| customers  |
+| sample_07  |
+| sample_08  |
+| web_logs   |
++------------+--+
+4 rows selected (0.275 seconds)
+0: jdbc:hive2://localhost:10000/default> quit;
+Error: Error while compiling statement: FAILED: ParseException line 1:0 cannot recognize input near 'quit' '<EOF>' '<EOF>' (state=42000,code=40000)
+0: jdbc:hive2://localhost:10000/default> [george@ip-172-31-5-64 centos]$
+[ferdinand@ip-172-31-5-64 centos]$ kinit
+Password for ferdinand@WGSEBC.COM:
+[ferdinand@ip-172-31-5-64 centos]$ beeline
+Beeline version 1.1.0-cdh5.9.3 by Apache Hive
+beeline> !connect jdbc:hive2://localhost:10000/default;principal=hive/ip-172-31-5-64.us-east-2.compute.internal@WGSEBC.COM
+scan complete in 2ms
+Connecting to jdbc:hive2://localhost:10000/default;principal=hive/ip-172-31-5-64.us-east-2.compute.internal@WGSEBC.COM
+Connected to: Apache Hive (version 1.1.0-cdh5.9.3)
+Driver: Hive JDBC (version 1.1.0-cdh5.9.3)
+Transaction isolation: TRANSACTION_REPEATABLE_READ
+0: jdbc:hive2://localhost:10000/default> show tables;
+INFO  : Compiling command(queryId=hive_20171004203333_793eec4f-b8f3-402e-9a9e-15e9e7d8f63d): show tables
+INFO  : Semantic Analysis Completed
+INFO  : Returning Hive schema: Schema(fieldSchemas:[FieldSchema(name:tab_name, type:string, comment:from deserializer)], properties:null)
+INFO  : Completed compiling command(queryId=hive_20171004203333_793eec4f-b8f3-402e-9a9e-15e9e7d8f63d); Time taken: 0.057 seconds
+INFO  : Executing command(queryId=hive_20171004203333_793eec4f-b8f3-402e-9a9e-15e9e7d8f63d): show tables
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20171004203333_793eec4f-b8f3-402e-9a9e-15e9e7d8f63d); Time taken: 0.113 seconds
+INFO  : OK
++------------+--+
+|  tab_name  |
++------------+--+
+| sample_07  |
++------------+--+
+1 row selected (0.251 seconds)
