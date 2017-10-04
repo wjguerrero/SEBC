@@ -73,3 +73,24 @@ WARNING: no policy specified for ferdinand@WGSEBC.COM; defaulting to no policy
 Enter password for principal "ferdinand@WGSEBC.COM":
 Re-enter password for principal "ferdinand@WGSEBC.COM":
 Principal "ferdinand@WGSEBC.COM" created.
+0: jdbc:hive2://localhost:10000/default> CREATE ROLE reads;
+INFO  : Compiling command(queryId=hive_20171004202626_7e23f131-4790-42be-826f-6cc3be40aa3d): CREATE ROLE reads
+INFO  : Semantic Analysis Completed
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : Completed compiling command(queryId=hive_20171004202626_7e23f131-4790-42be-826f-6cc3be40aa3d); Time taken: 0.067 seconds
+INFO  : Executing command(queryId=hive_20171004202626_7e23f131-4790-42be-826f-6cc3be40aa3d): CREATE ROLE reads
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20171004202626_7e23f131-4790-42be-826f-6cc3be40aa3d); Time taken: 0.037 seconds
+INFO  : OK
+No rows affected (0.154 seconds)
+0: jdbc:hive2://localhost:10000/default> CREATE ROLE writes;
+INFO  : Compiling command(queryId=hive_20171004202626_82587670-a5f5-4519-877b-dbb16de0dc18): CREATE ROLE writes
+INFO  : Semantic Analysis Completed
+INFO  : Returning Hive schema: Schema(fieldSchemas:null, properties:null)
+INFO  : Completed compiling command(queryId=hive_20171004202626_82587670-a5f5-4519-877b-dbb16de0dc18); Time taken: 0.123 seconds
+INFO  : Executing command(queryId=hive_20171004202626_82587670-a5f5-4519-877b-dbb16de0dc18): CREATE ROLE writes
+INFO  : Starting task [Stage-0:DDL] in serial mode
+INFO  : Completed executing command(queryId=hive_20171004202626_82587670-a5f5-4519-877b-dbb16de0dc18); Time taken: 0.022 seconds
+INFO  : OK
+No rows affected (0.156 seconds)
+0: jdbc:hive2://localhost:10000/default>
