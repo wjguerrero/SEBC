@@ -53,4 +53,23 @@ INFO  : OK
 | web_logs   |
 +------------+--+
 4 rows selected (0.505 seconds)
-
+[root@ip-172-31-6-242 centos]# sudo groupadd selector
+[root@ip-172-31-6-242 centos]# sudo groupadd inserters
+[root@ip-172-31-6-242 centos]# sudo useradd -u 1100 -g selector george
+[root@ip-172-31-6-242 centos]# sudo useradd -u 1200 -g inserters ferdinand
+[root@ip-172-31-6-242 centos]# kadmin.local: add_principal george
+bash: kadmin.local:: command not found
+[root@ip-172-31-6-242 centos]# kadmin.local
+Authenticating as principal wjguerrero/admin@WGSEBC.COM with password.
+kadmin.local:  admin
+kadmin.local: Unknown request "admin".  Type "?" for a request list.
+kadmin.local:  add_principal george
+WARNING: no policy specified for george@WGSEBC.COM; defaulting to no policy
+Enter password for principal "george@WGSEBC.COM":
+Re-enter password for principal "george@WGSEBC.COM":
+Principal "george@WGSEBC.COM" created.
+kadmin.local:  add_principal ferdinand
+WARNING: no policy specified for ferdinand@WGSEBC.COM; defaulting to no policy
+Enter password for principal "ferdinand@WGSEBC.COM":
+Re-enter password for principal "ferdinand@WGSEBC.COM":
+Principal "ferdinand@WGSEBC.COM" created.
