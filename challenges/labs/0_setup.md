@@ -9,3 +9,15 @@ ec2-13-58-213-204.us-east-2.compute.amazonaws.com | 13.58.213.204 |	ip-172-31-45
 
 centos-release-7-3.1611.el7.centos.x86_64
 
+```
+[root@ip-172-31-45-105 centos]# df -h
+Filesystem      Size  Used Avail Use% Mounted on
+/dev/xvda1       40G  1.1G   39G   3% /
+devtmpfs         16G     0   16G   0% /dev
+tmpfs            16G     0   16G   0% /dev/shm
+tmpfs            16G   17M   16G   1% /run
+tmpfs            16G     0   16G   0% /sys/fs/cgroup
+tmpfs           3.2G     0  3.2G   0% /run/user/1000
+/dev/xvdb       118G   61M  112G   1% /disco1
+/dev/xvdc       118G   69M  112G   1% /disco2
+```
