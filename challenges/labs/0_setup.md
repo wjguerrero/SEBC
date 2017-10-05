@@ -21,3 +21,17 @@ tmpfs           3.2G     0  3.2G   0% /run/user/1000
 /dev/xvdb       118G   61M  112G   1% /disco1
 /dev/xvdc       118G   69M  112G   1% /disco2
 ```
+
+```
+[root@ip-172-31-45-105 centos]# yum repolist
+Loaded plugins: fastestmirror
+Loading mirror speeds from cached hostfile
+ * base: mirror.es.its.nyu.edu
+ * extras: bay.uchicago.edu
+ * updates: mirrors.liquidweb.com
+repo id                             repo name                             status
+base/7/x86_64                       CentOS-7 - Base                       9,591
+extras/7/x86_64                     CentOS-7 - Extras                       225
+updates/7/x86_64                    CentOS-7 - Updates                      731
+repolist: 10,547
+```
