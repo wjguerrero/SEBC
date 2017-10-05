@@ -7,12 +7,5 @@ ec2-18-221-203-96.us-east-2.compute.amazonaws.com | 18.221.203.96 |	ip-172-31-44
 ec2-13-59-90-78.us-east-2.compute.amazonaws.com   | 13.59.90.78   |	ip-172-31-40-210.us-east-2.compute.internal| 172.31.40.210
 ec2-13-58-213-204.us-east-2.compute.amazonaws.com | 13.58.213.204 |	ip-172-31-45-148.us-east-2.compute.internal| 172.31.45.148
 
-Operating System: CentOS Linux 7 (Core)
-
-CPE OS Name: cpe:/o:centos:centos:7
-
-Kernel: Linux 3.10.0-514.16.1.el7.x86_64
-
-Architecture: x86-64
-
+centos-release-7-3.1611.el7.centos.x86_64
 
