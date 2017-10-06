@@ -39,11 +39,11 @@ repolist: 10,547
 ´´´
 [root@ip-172-31-45-105 centos]# cat /etc/passwd | grep saturn
 
-saturn:x:2800:2902::/home/saturn:/bin/bash
+saturn: x :2800:2902::/home/saturn:/bin/bash
 
 [root@ip-172-31-45-105 centos]# cat /etc/passwd | grep haley
 
-haley:x:2900:2901::/home/haley:/bin/bash
+haley: x :2900:2901::/home/haley:/bin/bash
 
 ´´´
 
