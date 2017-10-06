@@ -49,9 +49,9 @@ haley:x:2900:2901::/home/haley:/bin/bash
 
 ´´´
 [root@ip-172-31-45-105 centos]# cat /etc/group | grep planets
-planets:x:2902:
+planets: x :2902:
 
 [root@ip-172-31-45-105 centos]# cat /etc/group | grep comets
-comets:x:2901:
+comets: x :2901:
 ´´´
 
