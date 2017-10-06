@@ -36,7 +36,7 @@ updates/7/x86_64                    CentOS-7 - Updates                      731
 repolist: 10,547
 ```
 
-´´´
+```
 [root@ip-172-31-45-105 centos]# cat /etc/passwd | grep saturn
 
 saturn: x :2800:2902::/home/saturn:/bin/bash
@@ -45,13 +45,11 @@ saturn: x :2800:2902::/home/saturn:/bin/bash
 
 haley: x :2900:2901::/home/haley:/bin/bash
 
-´´´
 
-´´´
 [root@ip-172-31-45-105 centos]# cat /etc/group | grep planets
 planets: x :2902:
 
 [root@ip-172-31-45-105 centos]# cat /etc/group | grep comets
 comets: x :2901:
-´´´
+```
 
