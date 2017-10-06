@@ -8,18 +8,15 @@ MariaDB [(none)]> SHOW VARIABLES like 'hostname';
 ```
 MariaDB [(none)]> SHOW VARIABLES like 'version';
 ```
-+---------------+----------------+
 | Variable_name | Value          |
-+---------------+----------------+
+|---------------|----------------|
 | version       | 5.5.57-MariaDB |
-+---------------+----------------+
 
 ```
 MariaDB [(none)]> show databases;
 ```
-+--------------------+
 | Database           |
-+--------------------+
+|--------------------|
 | information_schema |
 | amon               |
 | hue                |
@@ -32,4 +29,4 @@ MariaDB [(none)]> show databases;
 | rman               |
 | scm                |
 | sentry             |
-+--------------------+
+
