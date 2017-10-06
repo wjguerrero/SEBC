@@ -69,9 +69,9 @@
   * `oozie`
   * `hue`
 * Record the following in `challenges/labs/1_db-server.md`
-  * A command and output that shows the hostname of your database server 
-  * A command and output that reports the database server version
-  * A command and output that lists all the databases in the server
+  * A command and output that shows the hostname of your database server (show variables where Variable_name='hostname';)
+  * A command and output that reports the database server version VERSION()
+  * A command and output that lists all the databases in the server SHOW DATABASES;
 * Push this work to GitHub
 * Label the Issue `review` and assign it to the instructors
 
